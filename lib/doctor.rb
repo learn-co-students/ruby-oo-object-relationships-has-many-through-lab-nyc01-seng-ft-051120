@@ -11,8 +11,8 @@ def self.all
     @@all
 end
 
-def new_appointment(date, patient)
-  new_appt = Appointment.new(date, patient, self)
+def new_appointment(patient, date)
+  Appointment.new(date, patient, self)
 end
 
 def appointments
@@ -23,7 +23,7 @@ end
 
 def patients 
   appointments.collect do |x_instance|
-    x_instance.date
+    x_instance.patient
   end
 end
 
